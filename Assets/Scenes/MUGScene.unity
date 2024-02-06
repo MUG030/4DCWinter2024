@@ -155,9 +155,11 @@ MonoBehaviour:
   ikuraGetCount: 0
   gameoverCount: 0
   clearCount: 0
+  totalScore: 0
   isIkuraGetAchievement: 0
   isGameoverAchievement: 0
   isClearAchievement: 0
+  isTotalScoreAchievement: 0
 --- !u!4 &140088194
 Transform:
   m_ObjectHideFlags: 0
@@ -594,11 +596,11 @@ Transform:
   m_GameObject: {fileID: 926963654}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.043573223, y: -0.04357338, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1125179299}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &946801093
 PrefabInstance:
@@ -880,7 +882,8 @@ Transform:
   m_LocalPosition: {x: 0.043573223, y: 0.04357338, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 926963657}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1125179300
@@ -943,7 +946,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 10
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -1228,7 +1231,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_TargetDisplay: 0
 --- !u!224 &1760236937
 RectTransform:
@@ -1592,7 +1595,7 @@ GameObject:
   - component: {fileID: 2003756747}
   - component: {fileID: 2003756749}
   m_Layer: 0
-  m_Name: Square
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1640,7 +1643,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.3207547, g: 0.3207547, b: 0.3207547, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1659,8 +1662,8 @@ Transform:
   m_GameObject: {fileID: 2003756746}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.272, y: -3.09, z: 0}
-  m_LocalScale: {x: 88.92847, y: 1, z: 1}
+  m_LocalPosition: {x: 35.272, y: -6.6062, z: 0}
+  m_LocalScale: {x: 88.92847, y: 8.0323, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1836,7 +1839,6 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 926963657}
   - {fileID: 2003756748}
   - {fileID: 1760236937}
   - {fileID: 573345886}
