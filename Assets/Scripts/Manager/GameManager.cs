@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private int score = 0;
+    private int level = 1;
+    public int levelCount = 300;
 
     // シングルトン化（どこからでもアクセスできるようにする）
     public static GameManager instance;
@@ -39,6 +41,20 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         rewardAchievement = new RewardAchievement();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "MUGScene")
+        {
+            StartGame();
+        }
+    }
+
+    private void StartGame()
+    {
+        score = 0;
     }
 
     public void AddTotalScore(int amount)
@@ -68,11 +84,35 @@ public class GameManager : MonoBehaviour
         return score;
     }
 
+    public void AddLevel()
+    {
+        level++;
+    }
+
+    public void AddLevelCount(int amount)
+    {
+        levelCount += amount;
+    }
+
+    public int GetLevel()
+    {
+        return level;
+    }
+
+    public int GetLevelCount()
+    {
+        return levelCount;
+    }
+
     private void Update()
     {
         if (isIkuraGetAchievement && SceneManager.GetActiveScene().name == "ClearDemo")
         {
             demo01.SetActive(true);
+        }
+        else
+        {
+            demo01.SetActive(false);
         }
     }
 }
