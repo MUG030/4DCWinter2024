@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private int score = 0;
     private int level = 1;
     public int levelCount = 300;
+    public int totalScoreList;
 
     // シングルトン化（どこからでもアクセスできるようにする）
     public static GameManager instance;
@@ -55,6 +56,8 @@ public class GameManager : MonoBehaviour
     private void StartGame()
     {
         score = 0;
+        totalScoreList = GetTotalScore();
+        Debug.Log("totalScoreList: " + totalScoreList);
     }
 
     public void AddTotalScore(int amount)

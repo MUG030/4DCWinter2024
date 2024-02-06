@@ -10,10 +10,21 @@ public class ScoreLevel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelCountText;
 
 
+
     // Start is called before the first frame update
     void Start()
     {
         scoreText.text = GameManager.instance.GetScore().ToString() + "p";
+        StartLevelCount();
+    }
+
+    void Update()
+    {
+        StartCoroutine(StartLevelCount());
+    }
+
+    private IEnumerator StartLevelCount()
+    {
         levelText.text = GameManager.instance.GetLevel().ToString();
 
         while (GameManager.instance.GetTotalScore() >= GameManager.instance.levelCount)
@@ -24,6 +35,13 @@ public class ScoreLevel : MonoBehaviour
             GameManager.instance.AddLevelCount(300);
         }
 
-        levelCountText.text = GameManager.instance.GetTotalScore().ToString() + "/" + GameManager.instance.GetLevelCount().ToString();
+        int startScore = GameManager.instance.totalScoreList; // 仮定: totalScoreListはint型
+        int endScore = GameManager.instance.GetTotalScore();
+
+        for (int i = startScore; i <= endScore; i++)
+        {
+            levelCountText.text = i.ToString() + "/" + GameManager.instance.GetLevelCount().ToString();
+            yield return null; // 次のフレームまで待機
+        }
     }
 }
