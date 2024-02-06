@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -31,6 +32,9 @@ public class GameManager : MonoBehaviour
                 isGameoverAchievement,
                 isClearAchievement,
                 isTotalScoreAchievement;
+
+    public GameObject demo01,
+                      demo02;
 
     private void Start()
     {
@@ -62,5 +66,13 @@ public class GameManager : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    private void Update()
+    {
+        if (isIkuraGetAchievement && SceneManager.GetActiveScene().name == "ClearDemo")
+        {
+            demo01.SetActive(true);
+        }
     }
 }
