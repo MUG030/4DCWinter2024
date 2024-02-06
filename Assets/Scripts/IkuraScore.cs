@@ -12,6 +12,7 @@ public class IkuraScore : MonoBehaviour
         {
             Debug.Log("Ikura Get!");
             scoreController.UpdateScoreView(100);
+            GameManager.instance.AddIkuraGetCount();
             Destroy(gameObject);
         }
     }

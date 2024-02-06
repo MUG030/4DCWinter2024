@@ -10,31 +10,55 @@ public class GameManager : MonoBehaviour
     // シングルトン化（どこからでもアクセスできるようにする）
     public static GameManager instance;
 
-    private void Awake()
+    void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
     }
 
-    // Start is called before the first frame update
-    void Start()
+    // 実績に関する処理
+    private RewardAchievement rewardAchievement;
+
+    public int  ikuraGetCount,
+                gameoverCount,
+                clearCount,
+                totalScore;
+
+    public bool isIkuraGetAchievement,
+                isGameoverAchievement,
+                isClearAchievement,
+                isTotalScoreAchievement;
+
+    private void Start()
     {
-        
+        rewardAchievement = new RewardAchievement();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void AddTotalScore(int amount)
     {
-        
+        totalScore += amount;
+        rewardAchievement.TotalJudge(totalScore);
     }
 
+    public void AddIkuraGetCount()
+    {
+        ikuraGetCount++;
+        rewardAchievement.IkuraJudge(ikuraGetCount);
+    }
+    
     public void AddScore(int amount)
     {
         score += amount;
         Debug.Log("Score: " + score);
     }
+
+    public int GetTotalScore()
+    {
+        return totalScore;
+    }    
 
     public int GetScore()
     {
