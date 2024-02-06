@@ -23,6 +23,7 @@ public class ScoreController : MonoBehaviour
     public void UpdateScoreView(int scoreToAdd)
     {
         GameManager.instance.AddScore(scoreToAdd);
+        GameManager.instance.AddTotalScore(scoreToAdd);
         scoreView.UpdateScore(GameManager.instance.GetScore());
     }
 }
