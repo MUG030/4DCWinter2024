@@ -43,7 +43,7 @@ public class CollisionController : MonoBehaviour
         thirdBar.SetActive(false);
         deathBar.SetActive(false);
     }
-    private void OncollisionEnnter2D(Collision2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.tag == "trap")
         {
