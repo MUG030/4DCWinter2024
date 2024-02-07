@@ -1417,7 +1417,7 @@ MonoBehaviour:
   scoreText: {fileID: 572973839}
   levelText: {fileID: 1672922740}
   levelCountText: {fileID: 1798306003}
-  levelCountBar: {fileID: 0}
+  levelCountBar: {fileID: 1780710811}
 --- !u!4 &1765328830
 Transform:
   m_ObjectHideFlags: 0

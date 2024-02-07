@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     private int score = 0;
-    private int level = 1;
-    public int levelCount = 300;
+    private int level = 1;          // 初期レベル
+    public int levelCount = 300;    // 初期レベルカウント上限値
     public int totalScoreList;
 
     // シングルトン化（どこからでもアクセスできるようにする）
