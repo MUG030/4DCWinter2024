@@ -7,6 +7,11 @@ public class OperatePlayer : MonoBehaviour
     [SerializeField]
     private float jumpPower = 15f;
     private Vector2 jumpVector;
+    private Transform transform;
+    private Vector2 defaultPosition;
+    [SerializeField]
+    private float returnSpeed = 0.3f;
+    private Vector2 returnVector;
     private Rigidbody2D rigidBody;
     private BoxCollider2D collider;
     private bool isGrounded;
@@ -16,6 +21,9 @@ public class OperatePlayer : MonoBehaviour
     void Start()
     {
         jumpVector = new Vector2(0f, jumpPower);
+        returnVector = new Vector2(returnSpeed, 0);
+        transform = gameObject.transform;
+        defaultPosition = transform.position;
         rigidBody = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         if(rigidBody.gravityScale == 1)
@@ -34,8 +42,14 @@ public class OperatePlayer : MonoBehaviour
         }
         if(isJumping && (rigidBody.velocity.y == -0.1f))
         {
+            Debug.Log(collider.isTrigger);
+            Debug.Log(rigidBody.velocity.y);
             isJumping = false;
             isFalling = true;
+        }
+        if(transform.position.x < defaultPosition.x)
+        {
+            transform.Translate(returnVector * Time.deltaTime);
         }
     }
     void FixedUpdate()
@@ -53,10 +67,26 @@ public class OperatePlayer : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(isJumping)
-        { isFalling = true; }
+        {
+            Debug.Log("enter_jump");
+            collider.isTrigger = true;
+            isFalling = true;
+        }
+        if(isFalling && (rigidBody.velocity.y < -0.1f))
+        {
+            Debug.Log(rigidBody.velocity.y);
+            Debug.Log(collider.isTrigger);
+            collider.isTrigger = false;
+        }
     }
     void OnTriggerExit2D(Collider2D other)
     {
+        if(isJumping && !isGrounded)
+        {
+            Debug.Log("exit_jump");
+            collider.isTrigger = false;
+            isJumping = false;
+        }
         if(isFalling)
         {
             collider.isTrigger = false;
