@@ -44,7 +44,11 @@ public class OperatePlayer : MonoBehaviour
     }
     void OnBecameInvisible()
     {
-        //下の画面外落下時の処理を書く
+        if(transform.position.y < 0)
+        {
+            Debug.Log("GameOver_Falling");
+            //落下死の処理
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {
