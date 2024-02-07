@@ -17,6 +17,7 @@ public class TileFullVisible : MonoBehaviour
         if(camRightSide_X == 0f)
         {
             camRightSide_X = Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x;
+            Debug.Log(camRightSide_X);
         }
     }
 
@@ -28,7 +29,10 @@ public class TileFullVisible : MonoBehaviour
             _transform_rightedge = gameObject.transform.position.x
                                 + (spriteRenderer.size.x / 2);
             if(_transform_rightedge < camRightSide_X)
-            { isFullVisible = true; }   
+            {
+                isFullVisible = true;
+                Debug.Log($"{transform.position.y}:FullVisible");
+            }
         }
     }
 }

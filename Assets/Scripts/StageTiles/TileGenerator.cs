@@ -25,7 +25,7 @@ public class TileGenerator : MonoBehaviour
         {
             if(tile_Ways_Amount > 0)
             {
-                int i = Random.Range(0, tile_Ways.Count-1);
+                int i = Random.Range(0, tile_Ways.Count);
                 latestTile = Instantiate(tile_Ways[i]);
                 latestTile_Scroll = latestTile.GetComponent<TilesScroll>();
                 --tile_Ways_Amount;
