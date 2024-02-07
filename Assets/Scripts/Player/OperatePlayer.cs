@@ -5,24 +5,38 @@ using UnityEngine;
 public class OperatePlayer : MonoBehaviour
 {
     [SerializeField]
-    private float jumpPower = 0.5f;
+    private float jumpPower = 15f;
     private Vector2 jumpVector;
     private Rigidbody2D rigidBody;
     private BoxCollider2D collider;
     private bool isGrounded;
+    private bool isJumping = false;
+    private bool isFalling = false;
     // Start is called before the first frame update
     void Start()
     {
         jumpVector = new Vector2(0f, jumpPower);
         rigidBody = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+        if(rigidBody.gravityScale == 1)
+        { rigidBody.gravityScale = 3; }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.UpArrow) && isGrounded)
+        if(Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && (rigidBody.velocity.y == 0f))
         { Jump(); }
+        if(Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            collider.isTrigger = true;
+            isFalling = true;
+        }
+        if(isJumping && (rigidBody.velocity.y == -0.1f))
+        {
+            isJumping = false;
+            isFalling = true;
+        }
     }
     void FixedUpdate()
     {
@@ -30,11 +44,26 @@ public class OperatePlayer : MonoBehaviour
     }
     void OnBecameInvisible()
     {
-        //落下時の処理を書く
+        //下の画面外落下時の処理を書く
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(isJumping)
+        { isFalling = true; }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if(isFalling)
+        {
+            collider.isTrigger = false;
+            isFalling = false;
+        }
     }
     void Jump()
     {
         rigidBody.AddForce(jumpVector, ForceMode2D.Impulse);
+        isJumping = true;
+        collider.isTrigger = true;
     }
     //引用元：4dcsummer2023
     private bool CheckGround()
@@ -48,7 +77,6 @@ public class OperatePlayer : MonoBehaviour
         Debug.DrawRay(positionLeft, direction * distance, Color.red);
         RaycastHit2D hitRight = Physics2D.Raycast(positionRight, direction, distance);
         Debug.DrawRay(positionRight, direction * distance, Color.red);
-        return hitLeft.collider != null || hitRight.collider != null;
+        return hitLeft.collider != null && hitRight.collider != null;
     }
-
 }
