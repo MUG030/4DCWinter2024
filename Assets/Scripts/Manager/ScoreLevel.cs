@@ -15,26 +15,32 @@ public class ScoreLevel : MonoBehaviour
     void Start()
     {
         scoreText.text = GameManager.instance.GetScore().ToString() + "p";
-        StartLevelCount();
     }
 
     void Update()
     {
-        StartCoroutine(StartLevelCount());
+        StartLevelCount();
     }
 
-    private IEnumerator StartLevelCount()
+    private void StartLevelCount()
     {
         levelText.text = GameManager.instance.GetLevel().ToString();
 
         while (GameManager.instance.GetTotalScore() >= GameManager.instance.levelCount)
         {
+            StartCoroutine(CountScore());
+
             GameManager.instance.AddLevel();
             GameManager.instance.GetLevel();
             levelText.text = GameManager.instance.GetLevel().ToString();
             GameManager.instance.AddLevelCount(300);
         }
 
+        
+    }
+
+    private IEnumerator CountScore()
+    {
         int startScore = GameManager.instance.totalScoreList; // 仮定: totalScoreListはint型
         int endScore = GameManager.instance.GetTotalScore();
 
