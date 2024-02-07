@@ -68,14 +68,11 @@ public class OperatePlayer : MonoBehaviour
     {
         if(isJumping)
         {
-            Debug.Log("enter_jump");
             collider.isTrigger = true;
             isFalling = true;
         }
         if(isFalling && (rigidBody.velocity.y < -0.1f))
         {
-            Debug.Log(rigidBody.velocity.y);
-            Debug.Log(collider.isTrigger);
             collider.isTrigger = false;
         }
     }
@@ -83,7 +80,6 @@ public class OperatePlayer : MonoBehaviour
     {
         if(isJumping && !isGrounded)
         {
-            Debug.Log("exit_jump");
             collider.isTrigger = false;
             isJumping = false;
         }

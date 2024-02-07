@@ -17,14 +17,17 @@ public class TilesScroll : MonoBehaviour
         parent = gameObject.transform;
         childrenVisible = new TileFullVisible[parent.childCount];
         for(int i = 0; i < childrenVisible.Length; ++i)
-        { childrenVisible[i] = parent.GetChild(i).GetComponent<TileFullVisible>(); }
+        {
+            childrenVisible[i] = parent.GetChild(i).GetComponent<TileFullVisible>();
+            Debug.Log(parent.GetChild(i).name);
+        }
     }
     void Update()
     {
         transform.Translate(scrollVector * Time.deltaTime);
         
-        if(parent.childCount == 0)
-        { Destroy(this); }
+        //if(parent.childCount == 0)
+        //{ Destroy(gameObject); }
 
         if(!isAllChildVisible)
         {

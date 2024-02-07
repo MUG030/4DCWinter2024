@@ -4,14 +4,18 @@ using UnityEngine;
 
 public class GoalSystem : MonoBehaviour
 {
-    public DemoSceneChange demoSceneChange;
+    public Changescene2 changescene2;
+    void Start()
+    {
+        changescene2 = GameObject.Find("SceneManager").GetComponent<Changescene2>();
+    }
 
     private void OnTriggerEnter2D(Collider2D col) 
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Goal");
-            // demoSceneChange.ChangeScene();
+            // Debug.Log("Goal");
+            changescene2.change_button();
         }
     }
 }

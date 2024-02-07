@@ -5,6 +5,10 @@ using UnityEngine;
 public class IkuraScore : MonoBehaviour
 {
     public ScoreController scoreController;
+    void Start()
+    {
+        scoreController = GameObject.Find("ScoreManager").GetComponent<ScoreController>();
+    }
 
     private void OnTriggerEnter2D(Collider2D col) 
     {

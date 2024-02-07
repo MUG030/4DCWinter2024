@@ -1083,6 +1083,7 @@ GameObject:
   - component: {fileID: 1125179301}
   - component: {fileID: 1125179300}
   - component: {fileID: 1125179302}
+  - component: {fileID: 1125179303}
   m_Layer: 0
   m_Name: DemoPlayer
   m_TagString: Player
@@ -1179,7 +1180,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1125179296}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 76192dcef7215754fa4edc0d4408ac05, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1231,7 +1232,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 5
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 76192dcef7215754fa4edc0d4408ac05, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1255,6 +1256,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+--- !u!114 &1125179303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125179296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b576a76c21ea44e47b5032f77d940e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jumpPower: 15
+  returnSpeed: 0.3
 --- !u!1001 &1156926162
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1577,7 +1592,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1701712791}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 046b4c8b43c72d64fa6be0722e86cc00, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -1707,7 +1722,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 1735463522}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 046b4c8b43c72d64fa6be0722e86cc00, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -2336,7 +2351,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 2003756746}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 046b4c8b43c72d64fa6be0722e86cc00, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0

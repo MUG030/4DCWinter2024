@@ -8,8 +8,4 @@ public class TileDestroy : MonoBehaviour
     {
         Destroy(this.gameObject);
     }
-    void OnBecameVisible()
-    {
-        Debug.Log("visible");
-    }
 }
