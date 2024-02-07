@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "MUGScene")
+        if (scene.name == "InGameScene")
         {
             StartGame();
         }

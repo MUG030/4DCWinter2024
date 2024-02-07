@@ -356,7 +356,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6470979621961951366, guid: 1abd2251368adae42ab2c36df3b3726b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1632,7 +1632,7 @@ MonoBehaviour:
   tile_Goal: {fileID: 1214356726834485171, guid: b91559c12764cc84ab1d288a3b62cf63, type: 3}
   tile_Ways:
   - {fileID: 5757098873861895525, guid: b5efdd495f8e9eb42a4e65ceb577f098, type: 3}
-  tile_Ways_Amount: 2
+  tile_Ways_Amount: 3
 --- !u!4 &1631164058
 Transform:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class TilesScroll : MonoBehaviour
         {
             for(int i = 0; i < childrenVisible.Length; i++)
             {
+                Debug.Log(childrenVisible.Length);
                 if(!childrenVisible[i].isFullVisible)
                     return;
             }

@@ -782,7 +782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1988283281
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89637ff003ad63643a59e7579f72a5ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  demoSceneChange: {fileID: 0}
+  changescene2: {fileID: 0}
 --- !u!50 &1988283282
 Rigidbody2D:
   serializedVersion: 4
@@ -968,7 +968,7 @@ MonoBehaviour:
   tile_Goal: {fileID: 1214356726834485171, guid: b91559c12764cc84ab1d288a3b62cf63, type: 3}
   tile_Ways:
   - {fileID: 5757098873861895525, guid: b5efdd495f8e9eb42a4e65ceb577f098, type: 3}
-  tile_Ways_Amount: 1
+  tile_Ways_Amount: 2
 --- !u!4 &2068048063
 Transform:
   m_ObjectHideFlags: 0
