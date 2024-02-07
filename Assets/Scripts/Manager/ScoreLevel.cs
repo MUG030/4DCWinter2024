@@ -4,15 +4,16 @@ using UnityEngine;
 using TMPro;
 using Cysharp.Threading.Tasks;
 using System.Runtime.InteropServices;
+using UnityEngine.UI;
 
 public class ScoreLevel : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI levelCountText;
+    // [SerializeField] private Slider levelCountBar;
 
     private int scoreCount;
-    private bool isCounting = false; // カウント中かどうかを示すフラグ
 
     // Start is called before the first frame update
     void Start()
@@ -52,11 +53,9 @@ public class ScoreLevel : MonoBehaviour
         int endScore = GameManager.instance.GetTotalScore();
 
         scoreCount = startScore;
-        int tempEndScore = endScore;
 
         for (int i = startScore; i <= endScore; i++)
         {
-            scoreCount += 1;
             levelCountText.text = i.ToString() + "/" + GameManager.instance.GetLevelCount().ToString();
             yield return null; // 次のフレームまで待機
         }
