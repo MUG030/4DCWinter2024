@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using Cysharp.Threading.Tasks;
+using System.Runtime.InteropServices;
 
 public class ScoreLevel : MonoBehaviour
 {
@@ -9,7 +11,8 @@ public class ScoreLevel : MonoBehaviour
     [SerializeField] private TextMeshProUGUI levelText;
     [SerializeField] private TextMeshProUGUI levelCountText;
 
-
+    private int scoreCount;
+    private bool isCounting = false; // カウント中かどうかを示すフラグ
 
     // Start is called before the first frame update
     void Start()
@@ -20,23 +23,27 @@ public class ScoreLevel : MonoBehaviour
     void Update()
     {
         StartLevelCount();
+        Debug.Log(scoreCount);
     }
 
     private void StartLevelCount()
     {
+        int totalScore = GameManager.instance.GetTotalScore();  // トータルスコアを取得
+        int levelCount = GameManager.instance.GetLevelCount();  // 現在レベルのカウント上限値を取得
+
         levelText.text = GameManager.instance.GetLevel().ToString();
 
-        while (GameManager.instance.GetTotalScore() >= GameManager.instance.levelCount)
+        if (totalScore < levelCount)
         {
             StartCoroutine(CountScore());
-
+        }
+        else if (totalScore >= levelCount)
+        {
             GameManager.instance.AddLevel();
             GameManager.instance.GetLevel();
             levelText.text = GameManager.instance.GetLevel().ToString();
             GameManager.instance.AddLevelCount(300);
         }
-
-        
     }
 
     private IEnumerator CountScore()
@@ -44,8 +51,12 @@ public class ScoreLevel : MonoBehaviour
         int startScore = GameManager.instance.totalScoreList; // 仮定: totalScoreListはint型
         int endScore = GameManager.instance.GetTotalScore();
 
+        scoreCount = startScore;
+        int tempEndScore = endScore;
+
         for (int i = startScore; i <= endScore; i++)
         {
+            scoreCount += 1;
             levelCountText.text = i.ToString() + "/" + GameManager.instance.GetLevelCount().ToString();
             yield return null; // 次のフレームまで待機
         }
