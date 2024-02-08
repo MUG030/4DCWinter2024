@@ -6,7 +6,7 @@ public class DemoJumpFall : MonoBehaviour
 {
 
     private float _Speed = 5.0f;
-    private float _JumpPower = 20.0f;
+    [SerializeField] private float _JumpPower = 20.0f;
     private Rigidbody2D _rb;
    
 

@@ -15,7 +15,7 @@ public class PlatformManager : MonoBehaviour
     public void Through()
     {
         platformEffector2D.surfaceArc = 0;
-        Invoke("Reset", 0.3f);
+        Invoke("Reset", 0.6f);
     }
 
     public void Reset()
