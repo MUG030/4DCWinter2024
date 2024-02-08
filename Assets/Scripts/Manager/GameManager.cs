@@ -113,7 +113,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (isIkuraGetAchievement && SceneManager.GetActiveScene().name == "ClearDemo")
+        if (isIkuraGetAchievement && (SceneManager.GetActiveScene().name == "ClearScene" || SceneManager.GetActiveScene().name == "ClearDemo"))
         {
             demo01.SetActive(true);
         }
