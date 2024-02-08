@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        rewardAchievement = new RewardAchievement();
+        Debug.Log("GameManagerのAwakeメソッドが呼ばれた");
         StartGame();
     }
 
@@ -92,7 +94,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         totalScoreList = GetTotalScore();
-        rewardAchievement = new RewardAchievement();
+        // rewardAchievement = new RewardAchievement();
     }
 
     public void AddTotalScore(int amount)

@@ -6,11 +6,25 @@ using UnityEngine;
 public class RewardAchievement
 {
     private int[] IkuraGetJudge;    // イクラを取得した数の判定
-
     private int[] TotalScoreJudge;  // 合計スコアの判定
-
     private int[] TotalClearJudge;  // 合計クリア数の判定
     private int[] TotalDeathJudge;  // 合計死亡数の判定
+
+    /*public RewardAchievement()
+    {
+        IkuraGetJudge = new int[] {10, 50, 100};       // イクラを取得した数の判定
+        TotalScoreJudge = new int[] {1000, 10000, 100000};     // 合計スコアの判定
+        TotalClearJudge = new int[] {1, 5, 25};     // 合計クリア数の判定
+        TotalDeathJudge = new int[] {1, 5, 25};     // 合計死亡数の判定
+    }*/
+
+    public RewardAchievement()
+    {
+        IkuraGetJudge = new int[3];       // イクラを取得した数の判定
+        TotalScoreJudge = new int[4];     // 合計スコアの判定
+        TotalClearJudge = new int[4];     // 合計クリア数の判定
+        TotalDeathJudge = new int[4];     // 合計死亡数の判定
+    }
 
     public void IkuraJudge(int ikuraCount)
     {
