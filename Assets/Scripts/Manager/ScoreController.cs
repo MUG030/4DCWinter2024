@@ -15,8 +15,9 @@ public class ScoreController : MonoBehaviour
     // ScoreViewの初期化
     private void InitializeScoreView()
     {
+        Debug.Log("InitializeScoreViewの呼び出し");
         scoreView = GetComponent<ScoreView>();
-        UpdateScoreView(GameManager.instance.GetScore());
+        scoreView.UpdateScore(0);
     }
 
     // スコアを更新し、それをScoreViewに反映
