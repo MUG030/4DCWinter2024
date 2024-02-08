@@ -20,6 +20,7 @@ public class OperatePlayer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         jumpVector = new Vector2(0f, jumpPower);
         returnVector = new Vector2(returnSpeed, 0);
         transform = gameObject.transform;

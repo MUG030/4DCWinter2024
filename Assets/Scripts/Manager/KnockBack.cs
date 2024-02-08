@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class KnockBack : MonoBehaviour
 {
-    private float knockBackForce = 5.0f;
+    public bool isTrapAttck;
+    private float knockBackDistance = -2.0f;
     private float knockBackTime = 0.4f;
 
     private Rigidbody2D rbody2;
@@ -22,11 +23,11 @@ public class KnockBack : MonoBehaviour
 
     public void KnockBackPlayer()
     {
-      
-
+        Vector3 knockDistance = new Vector3(knockBackDistance, 0f, 0f);
+        gameObject.transform.Translate(knockDistance);
         // 左方向へのノックバックを適用
-        Vector2 knockBackDirection = new Vector2(-1, 2).normalized;
-        rbody2.AddForce(knockBackDirection * knockBackForce, ForceMode2D.Impulse);
+       // Vector2 force = new Vector2(-6, 8);
+        //rbody2.AddForce(force, ForceMode2D.Impulse);
 
         // ノックバックの持続時間後に力をリセット
         Invoke("ResetVelocity", knockBackTime);
@@ -52,5 +53,6 @@ public class KnockBack : MonoBehaviour
         }
 
         spriteRenderer.enabled = true;
+        isTrapAttck = false;
     }
 }
