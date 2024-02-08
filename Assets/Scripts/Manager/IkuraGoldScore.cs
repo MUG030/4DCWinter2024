@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IkuraScore : MonoBehaviour
+public class IkuraGoldScore : MonoBehaviour
 {
     private ScoreController scoreController;
     void Start()
@@ -14,8 +14,8 @@ public class IkuraScore : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            Debug.Log("Ikura Get!");
-            scoreController.UpdateScoreView(100);
+            Debug.Log("Golden Ikura Get!");
+            scoreController.UpdateScoreView(300);
             GameManager.instance.AddIkuraGetCount();
             Destroy(gameObject);
         }
