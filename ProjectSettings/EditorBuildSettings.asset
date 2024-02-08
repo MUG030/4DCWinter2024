@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSceneFolder/ClearScene.unity
     guid: 6881b5eb954e2d14ab89f38f71bce6a0
   - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: e2cf458f24d2a4a4289d4a3f06695c0c
+  - enabled: 1
     path: Assets/Scenes/MUGScene.unity
     guid: 7323d3229f21f4347aff1dbbe67904f7
   - enabled: 1

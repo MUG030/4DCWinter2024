@@ -94,7 +94,11 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         totalScoreList = GetTotalScore();
-        // rewardAchievement = new RewardAchievement();
+        int fortune = UnityEngine.Random.Range(0, 100);
+        if (fortune == 77)
+        {
+            Debug.Log("運が良い");
+        }
     }
 
     public void AddTotalScore(int amount)
