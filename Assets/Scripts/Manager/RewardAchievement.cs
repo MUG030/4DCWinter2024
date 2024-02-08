@@ -5,25 +5,66 @@ using UnityEngine;
 // 実績データと実績解除の処理を行うクラス
 public class RewardAchievement
 {
-    int IkuraGetJudge = 2;
+    private int[] IkuraGetJudge;    // イクラを取得した数の判定
 
-    int TotalScoreJudge = 500;
+    private int[] TotalScoreJudge;  // 合計スコアの判定
+
+    private int[] TotalClearJudge;  // 合計クリア数の判定
+    private int[] TotalDeathJudge;  // 合計死亡数の判定
 
     public void IkuraJudge(int ikuraCount)
     {
-        if (ikuraCount == IkuraGetJudge)
+        if (ikuraCount == IkuraGetJudge[0])
         {
-            GameManager.instance.isIkuraGetAchievement = true;
-            Debug.Log("イクラゲット実績解除");
+            GameManager.instance.isIkuraGetAchievement1 = true;
+        } else if (ikuraCount == IkuraGetJudge[1])
+        {
+            GameManager.instance.isIkuraGetAchievement2 = true;
+        } else if (ikuraCount == IkuraGetJudge[2])
+        {
+            GameManager.instance.isIkuraGetAchievement3 = true;
         }
     }
 
     public void TotalJudge(int totalScore)
     {
-        if (totalScore == TotalScoreJudge)
+        if (totalScore == TotalScoreJudge[1])
         {
-            GameManager.instance.isTotalScoreAchievement = true;
-            Debug.Log("スコア500点達成実績解除");
+            GameManager.instance.isTotalScoreAchievement1 = true;
+        } else if (totalScore == TotalScoreJudge[2])
+        {
+            GameManager.instance.isTotalScoreAchievement2 = true;
+        } else if (totalScore == TotalScoreJudge[3])
+        {
+            GameManager.instance.isTotalScoreAchievement3 = true;
+        }
+    }
+
+    public void ClearJudge(int clearCount)
+    {
+        if (clearCount == TotalClearJudge[1])
+        {
+            GameManager.instance.isClearAchievement1 = true;
+        } else if (clearCount == TotalClearJudge[2])
+        {
+            GameManager.instance.isClearAchievement2 = true;
+        } else if (clearCount == TotalClearJudge[3])
+        {
+            GameManager.instance.isClearAchievement3 = true;
+        }
+    }
+
+    public void DeathJudge(int deathCount)
+    {
+        if (deathCount == TotalDeathJudge[1])
+        {
+            GameManager.instance.isGameoverAchievement1 = true;
+        } else if (deathCount == TotalDeathJudge[2])
+        {
+            GameManager.instance.isGameoverAchievement2 = true;
+        } else if (deathCount == TotalDeathJudge[3])
+        {
+            GameManager.instance.isGameoverAchievement3 = true;
         }
     }
 }
