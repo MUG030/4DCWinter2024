@@ -53,6 +53,8 @@ public class CollisionController : MonoBehaviour
     {
         if (other.gameObject.tag == "trap")
         {
+            knockBack.isTrapAttck = true;
+            
             knockBack.KnockBackPlayer();
             lifecount--;
             if (lifecount == 2)
