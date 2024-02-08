@@ -31,12 +31,13 @@ public class TilesScroll : MonoBehaviour
 
         if(!isAllChildVisible)
         {
-            for(int i = 0; i < childrenVisible.Length; i++)
+            Debug.Log("isAllChildVisible");
+            /*for(int i = 0; i < childrenVisible.Length; i++)
             {
                 Debug.Log(childrenVisible.Length);
                 if(!childrenVisible[i].isFullVisible)
                     return;
-            }
+            }*/
             isAllChildVisible = true;
         }
     }

@@ -12,14 +12,18 @@ public class GameManager : MonoBehaviour
     public int totalScoreList;
 
     // シングルトン化（どこからでもアクセスできるようにする）
-    public static GameManager instance;
+    public static GameManager instance = null;
 
-    void Awake()
+    private void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -41,7 +45,6 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        rewardAchievement = new RewardAchievement();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -57,6 +60,7 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         totalScoreList = GetTotalScore();
+        rewardAchievement = new RewardAchievement();
         Debug.Log("totalScoreList: " + totalScoreList);
     }
 
