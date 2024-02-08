@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int score = 0;
+    public int score = 0;
     private int level = 1;          // 初期レベル
     public int levelCount = 300;    // 初期レベルカウント上限値
     public int totalScoreList;
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        StartGame();
     }
 
     // 実績に関する処理
@@ -50,7 +51,7 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "InGameScene")
+        if (scene.name == "InGameScene" || scene.name == "MUGScene")
         {
             StartGame();
         }
@@ -61,7 +62,6 @@ public class GameManager : MonoBehaviour
         score = 0;
         totalScoreList = GetTotalScore();
         rewardAchievement = new RewardAchievement();
-        Debug.Log("totalScoreList: " + totalScoreList);
     }
 
     public void AddTotalScore(int amount)
