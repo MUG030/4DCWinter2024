@@ -9,16 +9,21 @@ public class KnockBack : MonoBehaviour
 
     private Rigidbody2D rbody2;
     private SpriteRenderer spriteRenderer;
+  
+
 
     // Start is called before the first frame update
     void Start()
     {
         rbody2 = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+       
     }
 
     public void KnockBackPlayer()
     {
+      
+
         // 左方向へのノックバックを適用
         Vector2 knockBackDirection = new Vector2(-1, 2).normalized;
         rbody2.AddForce(knockBackDirection * knockBackForce, ForceMode2D.Impulse);

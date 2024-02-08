@@ -7,7 +7,10 @@ using UnityEngine.UI;
 
 public class CollisionController : MonoBehaviour
 {
+    
+
     private int lifecount = 3;
+    private KnockBack knockBack;
 
     public GameObject firstBar;
     public GameObject secondBar;
@@ -19,6 +22,7 @@ public class CollisionController : MonoBehaviour
     void Start()
     {
         StartGame();
+
     }
 
     // Update is called once per frame
@@ -37,6 +41,8 @@ public class CollisionController : MonoBehaviour
 
     private void StartGame()
     {
+        knockBack = GetComponent<KnockBack>(); 
+
         lifecount = 3;
         firstBar.SetActive(true);
         secondBar.SetActive(false);
@@ -47,6 +53,7 @@ public class CollisionController : MonoBehaviour
     {
         if (other.gameObject.tag == "trap")
         {
+            knockBack.KnockBackPlayer();
             lifecount--;
             if (lifecount == 2)
             {
@@ -66,4 +73,6 @@ public class CollisionController : MonoBehaviour
             
         }
     }
+
+   
 }
