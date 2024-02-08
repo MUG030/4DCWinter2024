@@ -85,6 +85,8 @@ public class OperatePlayer : MonoBehaviour
         if(isFalling && (rigidBody.velocity.y < -0.1f))
         {
             collider.isTrigger = false;
+            anim.SetBool("jump", false);
+            anim.SetBool("fall", false);
         }
     }
     void OnTriggerExit2D(Collider2D other)
