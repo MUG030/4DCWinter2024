@@ -8,19 +8,11 @@ public class TilesScroll : MonoBehaviour
     private float scrollSpeed = 5.0f;
     private Vector2 scrollVector;
     private Transform parent;
-    private TileFullVisible[] childrenVisible;
-    public bool isAllChildVisible = false;
     void Start()
     {
         scrollVector = new Vector2(-scrollSpeed, 0);
         
         parent = gameObject.transform;
-        childrenVisible = new TileFullVisible[parent.childCount];
-        for(int i = 0; i < childrenVisible.Length; ++i)
-        {
-            childrenVisible[i] = parent.GetChild(i).GetComponent<TileFullVisible>();
-            Debug.Log(parent.GetChild(i).name);
-        }
     }
     void Update()
     {
@@ -28,17 +20,5 @@ public class TilesScroll : MonoBehaviour
         
         //if(parent.childCount == 0)
         //{ Destroy(gameObject); }
-
-        if(!isAllChildVisible)
-        {
-            Debug.Log("isAllChildVisible");
-            /*for(int i = 0; i < childrenVisible.Length; i++)
-            {
-                Debug.Log(childrenVisible.Length);
-                if(!childrenVisible[i].isFullVisible)
-                    return;
-            }*/
-            isAllChildVisible = true;
-        }
     }
 }
