@@ -48,6 +48,70 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2512504500292936760, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.x
+      value: 29.711071
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512504500292936760, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.09537697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512504500292936760, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.x
+      value: 31.029734
+      objectReference: {fileID: 0}
+    - target: {fileID: 2512504500292936760, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.8352866
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903500101486633589, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.x
+      value: 30.67059
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903500101486633589, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.y
+      value: 1.8394231
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903500101486633589, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.019845963
+      objectReference: {fileID: 0}
+    - target: {fileID: 3903500101486633589, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.545875
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448565374113204955, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.x
+      value: 29.805435
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448565374113204955, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0796957
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448565374113204955, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.x
+      value: -7.9662323
+      objectReference: {fileID: 0}
+    - target: {fileID: 4448565374113204955, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.y
+      value: 2.8176155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188050790731871800, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.x
+      value: 29.796383
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188050790731871800, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Size.y
+      value: 0.0687089
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188050790731871800, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.x
+      value: 8.093912
+      objectReference: {fileID: 0}
+    - target: {fileID: 6188050790731871800, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
+      propertyPath: m_Offset.y
+      value: -3.184345
+      objectReference: {fileID: 0}
     - target: {fileID: 9099497569193248004, guid: 8ac18fde9b27d6d45bd8df601ef044d1, type: 3}
       propertyPath: m_Name
       value: Stage_TestD_04
