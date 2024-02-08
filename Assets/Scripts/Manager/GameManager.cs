@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    private int score = 0;
+    public int score = 0;
     private int level = 1;          // 初期レベル
     public int levelCount = 300;    // 初期レベルカウント上限値
     public int totalScoreList;
@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        StartGame();
     }
 
     // 実績に関する処理
@@ -40,19 +41,40 @@ public class GameManager : MonoBehaviour
                 isClearAchievement,
                 isTotalScoreAchievement;
 
-    public GameObject demo01,
-                      demo02;
+    public GameObject[] achivements;
 
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "InGameScene")
+        if (scene.name == "InGameScene" || scene.name == "MUGScene")
         {
             StartGame();
+        }
+
+        if (scene.name == "ClearScene" || scene.name == "ClearDemo")
+        {
+            if (isIkuraGetAchievement)
+            {
+                achivements[0].SetActive(true);
+            }
+            else
+            {
+                achivements[0].SetActive(false);
+            }
         }
     }
 
@@ -61,7 +83,6 @@ public class GameManager : MonoBehaviour
         score = 0;
         totalScoreList = GetTotalScore();
         rewardAchievement = new RewardAchievement();
-        Debug.Log("totalScoreList: " + totalScoreList);
     }
 
     public void AddTotalScore(int amount)
@@ -111,15 +132,19 @@ public class GameManager : MonoBehaviour
         return levelCount;
     }
 
-    private void Update()
+    /*private void Update()
     {
-        if (isIkuraGetAchievement && (SceneManager.GetActiveScene().name == "ClearScene" || SceneManager.GetActiveScene().name == "ClearDemo"))
+        if (!(SceneManager.GetActiveScene().name == "ClearScene" || SceneManager.GetActiveScene().name == "ClearDemo"))
         {
-            demo01.SetActive(true);
+            return;
+        }
+        if (isIkuraGetAchievement)
+        {
+            achivements[1].SetActive(true);
         }
         else
         {
-            demo01.SetActive(false);
+            achivements[1].SetActive(false);
         }
-    }
+    }*/
 }

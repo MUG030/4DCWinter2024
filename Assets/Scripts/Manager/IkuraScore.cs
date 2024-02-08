@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IkuraScore : MonoBehaviour
 {
-    public ScoreController scoreController;
+    private ScoreController scoreController;
     void Start()
     {
         scoreController = GameObject.Find("ScoreManager").GetComponent<ScoreController>();
