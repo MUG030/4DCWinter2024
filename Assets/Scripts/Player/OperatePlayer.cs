@@ -14,6 +14,7 @@ public class OperatePlayer : MonoBehaviour
     private Vector2 returnVector;
     private Rigidbody2D rigidBody;
     private BoxCollider2D collider;
+    private Animator anim = null;
     private bool isGrounded;
     private bool isJumping = false;
     private bool isFalling = false;
@@ -26,6 +27,7 @@ public class OperatePlayer : MonoBehaviour
         defaultPosition = transform.position;
         rigidBody = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+        anim = GetComponent<Animator>();
         if(rigidBody.gravityScale == 1)
         { rigidBody.gravityScale = 3; }
     }
@@ -51,6 +53,10 @@ public class OperatePlayer : MonoBehaviour
         {
             transform.Translate(returnVector * Time.deltaTime);
         }
+        if(Input.GetKey(KeyCode.UpArrow))
+        { anim.SetBool("jump", true); }
+        if(Input.GetKey(KeyCode.DownArrow))
+        { anim.SetBool("fall", true); }
     }
     void FixedUpdate()
     {
@@ -63,6 +69,11 @@ public class OperatePlayer : MonoBehaviour
             Debug.Log("GameOver_Falling");
             //落下死の処理
         }
+    }
+    void OnCollisionEnter2D(Collision2D collisionInfo)
+    {
+        anim.SetBool("jump", false);
+        anim.SetBool("fall", false);
     }
     void OnTriggerEnter2D(Collider2D other)
     {
