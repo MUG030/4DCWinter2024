@@ -24,8 +24,8 @@ public class DrawTrail : MonoBehaviour
 
         // 初期の色を設定
         SetLineColor(colorList[currentColorIndex]);
-        // 10秒ごとに色を切り替える
-        InvokeRepeating("ChangeLineColor", 0f, 10f);
+        // 8秒ごとに色を切り替える
+        InvokeRepeating("ChangeLineColor", 0f, 8f);
     }
 
     void Update()
