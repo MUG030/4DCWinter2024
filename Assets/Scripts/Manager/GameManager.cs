@@ -41,12 +41,21 @@ public class GameManager : MonoBehaviour
                 isClearAchievement,
                 isTotalScoreAchievement;
 
-    public GameObject demo01,
-                      demo02;
+    public GameObject[] achivements;
 
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -54,6 +63,18 @@ public class GameManager : MonoBehaviour
         if (scene.name == "InGameScene" || scene.name == "MUGScene")
         {
             StartGame();
+        }
+
+        if (scene.name == "ClearScene" || scene.name == "ClearDemo")
+        {
+            if (isIkuraGetAchievement)
+            {
+                achivements[0].SetActive(true);
+            }
+            else
+            {
+                achivements[0].SetActive(false);
+            }
         }
     }
 
@@ -111,15 +132,19 @@ public class GameManager : MonoBehaviour
         return levelCount;
     }
 
-    private void Update()
+    /*private void Update()
     {
-        if (isIkuraGetAchievement && (SceneManager.GetActiveScene().name == "ClearScene" || SceneManager.GetActiveScene().name == "ClearDemo"))
+        if (!(SceneManager.GetActiveScene().name == "ClearScene" || SceneManager.GetActiveScene().name == "ClearDemo"))
         {
-            demo01.SetActive(true);
+            return;
+        }
+        if (isIkuraGetAchievement)
+        {
+            achivements[1].SetActive(true);
         }
         else
         {
-            demo01.SetActive(false);
+            achivements[1].SetActive(false);
         }
-    }
+    }*/
 }
