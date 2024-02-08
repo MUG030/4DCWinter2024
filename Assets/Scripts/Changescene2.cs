@@ -8,5 +8,6 @@ public class Changescene2 : MonoBehaviour
     public void change_button()
     {
         SceneManager.LoadScene("ClearScene");
+        GameManager.instance.AddClearCount();
     }
 }
