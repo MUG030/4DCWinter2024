@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 5757098873861895525}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.28499, y: 0.5795536, z: 0.1923757}
+  m_LocalPosition: {x: 11.28499, y: 0, z: 0.1923757}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56,11 +56,31 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_Size.x
-      value: 45
+      value: 30.35657
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6702914
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.067025185
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_Offset.y
+      value: -2.6139662
+      objectReference: {fileID: 0}
+    - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -110,7 +130,9 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 45
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -5304730824916257282, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+    - {fileID: 6187057695315538068, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

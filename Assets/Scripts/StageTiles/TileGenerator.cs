@@ -39,7 +39,7 @@ public class TileGenerator : MonoBehaviour
             if(tile_Ways_Amount == 1)
             {
                 Debug.Log("Last");
-                latestTile = Instantiate(tile_Goal, new Vector3(j*69+17.5f, 0, 0), Quaternion.identity);
+                latestTile = Instantiate(tile_Goal, new Vector3((j+1)*69+17.5f, 0, 0), Quaternion.identity);
                 latestTile_Scroll = latestTile.GetComponent<TilesScroll>();
             }
         }

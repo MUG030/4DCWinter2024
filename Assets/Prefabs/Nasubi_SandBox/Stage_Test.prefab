@@ -90,7 +90,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 5
-  isAllChildVisible: 0
 --- !u!1 &7768210247708710420
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,6 +129,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 598126219760809236}
     m_Modifications:
+    - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3
@@ -379,6 +382,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 598126219760809236}
     m_Modifications:
     - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 33
       objectReference: {fileID: 0}
@@ -627,6 +634,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 598126219760809236}
     m_Modifications:
     - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 10
       objectReference: {fileID: 0}
@@ -688,6 +699,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 598126219760809236}
     m_Modifications:
+    - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6

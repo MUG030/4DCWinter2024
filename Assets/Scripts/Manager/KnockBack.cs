@@ -5,7 +5,7 @@ using UnityEngine;
 public class KnockBack : MonoBehaviour
 {
     public bool isTrapAttck;
-    private float knockBackDistance = -2.0f;
+    private float knockBackDistance = -5.0f;
     private float knockBackTime = 0.4f;
 
     private Rigidbody2D rbody2;

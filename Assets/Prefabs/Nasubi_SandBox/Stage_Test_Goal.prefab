@@ -61,7 +61,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 5
-  isAllChildVisible: 0
 --- !u!1001 &30505818375923536
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -191,11 +190,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_Size.x
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2386340203029131485, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_SpriteTilingProperty.newSize.x
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4103910875582583879, guid: f425a4cf419bcbd419f883b4b5900e0c, type: 3}
       propertyPath: m_LocalPosition.x
