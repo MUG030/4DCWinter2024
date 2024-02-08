@@ -32,14 +32,24 @@ public class GameManager : MonoBehaviour
     private RewardAchievement rewardAchievement;
 
     public int  ikuraGetCount,
-                gameoverCount,
                 clearCount,
+                gameoverCount,
                 totalScore;
 
-    public bool isIkuraGetAchievement,
-                isGameoverAchievement,
-                isClearAchievement,
-                isTotalScoreAchievement;
+    public bool isIkuraGetAchievement1,
+                isIkuraGetAchievement2,
+                isIkuraGetAchievement3;
+    public bool isGameoverAchievement1,
+                isGameoverAchievement2,
+                isGameoverAchievement3;
+                
+    public bool isClearAchievement1,
+                isClearAchievement2,
+                isClearAchievement3;
+    
+    public bool isTotalScoreAchievement1,
+                isTotalScoreAchievement2,
+                isTotalScoreAchievement3;
 
     public GameObject[] achivements;
 
@@ -67,7 +77,7 @@ public class GameManager : MonoBehaviour
 
         if (scene.name == "ClearScene" || scene.name == "ClearDemo")
         {
-            if (isIkuraGetAchievement)
+            if (isIkuraGetAchievement1)
             {
                 achivements[0].SetActive(true);
             }
@@ -95,6 +105,18 @@ public class GameManager : MonoBehaviour
     {
         ikuraGetCount++;
         rewardAchievement.IkuraJudge(ikuraGetCount);
+    }
+
+    public void AddClearCount()
+    {
+        clearCount++;
+        rewardAchievement.ClearJudge(clearCount);
+    }
+
+    public void AddGameoverCount()
+    {
+        gameoverCount++;
+        rewardAchievement.DeathJudge(gameoverCount);
     }
     
     public void AddScore(int amount)
