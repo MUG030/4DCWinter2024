@@ -13,12 +13,20 @@ public class DemoJumpFall : MonoBehaviour
     public LayerMask whatIsGround;
     private Transform groundCheckPoint;
     private Animator anim = null;
+    private Transform transform;
+    private Vector2 defaultPosition;
+    [SerializeField]
+    private float returnSpeed = 0.3f;
+    private Vector2 returnVector;
 
     private void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
         groundCheckPoint = GetComponent<Transform>();
         anim = GetComponent<Animator>();
+        returnVector = new Vector2(returnSpeed, 0);
+        transform = gameObject.transform;
+        defaultPosition = transform.position;
     }
 
     void Update()
@@ -51,6 +59,11 @@ public class DemoJumpFall : MonoBehaviour
 
         Vector2 vector2 = new Vector2(0, _rb.velocity.y);
         _rb.velocity = vector2;
+        if(transform.position.x < defaultPosition.x)
+        {
+            transform.Translate(returnVector * Time.deltaTime);
+        }
+
     }
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
