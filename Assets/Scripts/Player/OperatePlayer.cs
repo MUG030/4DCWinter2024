@@ -69,6 +69,7 @@ public class OperatePlayer : MonoBehaviour
         {
             Debug.Log("GameOver_Falling");
             //落下死の処理
+            GameManager.instance.FallDead();
         }
     }
     void OnCollisionEnter2D(Collision2D collisionInfo)
