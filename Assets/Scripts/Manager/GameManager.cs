@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public int score = 0;
     private int level = 1;          // 初期レベル
-    public int levelCount = 300;    // 初期レベルカウント上限値
+    public int levelCount = 7000;    // 初期レベルカウント上限値
     public int totalScoreList;
 
     // シングルトン化（どこからでもアクセスできるようにする）
@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }*/
+    public GameObject activeObject;
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -109,6 +110,7 @@ public class GameManager : MonoBehaviour
 
         if (scene.name == "ClearScene" || scene.name == "ClearDemo")
         {
+            activeObject.SetActive(true);
             if (isGameoverAchievement1)
             {
                 achivements[0].SetActive(true);
@@ -253,6 +255,10 @@ public class GameManager : MonoBehaviour
                 achivements[14].SetActive(false);
             }
         }
+        else
+        {
+            activeObject.SetActive(false);
+        }
     }
 
     private void StartGame()
@@ -286,6 +292,12 @@ public class GameManager : MonoBehaviour
     {
         clearCount++;
         rewardAchievement.ClearJudge(clearCount);
+    }
+
+    public void AddDeadCount()
+    {
+        gameoverCount++;
+        rewardAchievement.DeathJudge(gameoverCount);
     }
 
     public void AddGameoverCount()

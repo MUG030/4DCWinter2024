@@ -21,7 +21,7 @@ public class RewardAchievement
 
     public RewardAchievement()
     {
-        IkuraGetJudge = new int[3] {1, 200, 300};       // イクラを取得した数の判定
+        IkuraGetJudge = new int[3] {10, 200, 300};       // イクラを取得した数の判定
         CatalogLevelJudge = new int[3] {10, 50, 100};     // 合計スコアの判定
         TotalClearJudge = new int[3] {1, 5, 25};     // 合計クリア数の判定
         TotalDeathJudge = new int[3] {1,5, 25};     // 合計死亡数の判定
