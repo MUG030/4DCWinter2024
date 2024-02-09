@@ -40,7 +40,47 @@ public class ScoreLevel : MonoBehaviour
             GameManager.instance.AddLevel();
             GameManager.instance.GetLevel();
             levelText.text = GameManager.instance.GetLevel().ToString();
-            GameManager.instance.AddLevelCount(300);
+            if (GameManager.instance.GetLevel() <= 10)
+            {
+                GameManager.instance.AddLevelCount(7000);
+            }
+            else if (GameManager.instance.GetLevel() <= 20)
+            {
+                GameManager.instance.AddLevelCount(10000);
+            }
+            else if (GameManager.instance.GetLevel() <= 30)
+            {
+                GameManager.instance.AddLevelCount(13000);
+            }
+            else if (GameManager.instance.GetLevel() <= 40)
+            {
+                GameManager.instance.AddLevelCount(16000);
+            }
+            else if (GameManager.instance.GetLevel() <= 50)
+            {
+                GameManager.instance.AddLevelCount(20000);
+            }
+            else if (GameManager.instance.GetLevel() <= 60)
+            {
+                GameManager.instance.AddLevelCount(24000);
+            }
+            else if (GameManager.instance.GetLevel() <= 70)
+            {
+                GameManager.instance.AddLevelCount(26000);
+            }
+            else if (GameManager.instance.GetLevel() <= 80)
+            {
+                GameManager.instance.AddLevelCount(28000);
+            }
+            else if (GameManager.instance.GetLevel() <= 90)
+            {
+                GameManager.instance.AddLevelCount(30000);
+            }
+            else if (GameManager.instance.GetLevel() <= 100)
+            {
+                GameManager.instance.AddLevelCount(35000);
+            }
+            
         }
     }
 

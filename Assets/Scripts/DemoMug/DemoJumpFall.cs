@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DemoJumpFall : MonoBehaviour
 {
@@ -81,6 +82,8 @@ public class DemoJumpFall : MonoBehaviour
             Debug.Log("GameOver_Falling");
             //落下死の処理
             GameManager.instance.FallDead();
+            GameManager.instance.AddDeadCount();
+            SceneManager.LoadScene("GameOverScene");
         }
     }
 

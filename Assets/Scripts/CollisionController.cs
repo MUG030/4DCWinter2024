@@ -71,10 +71,14 @@ public class CollisionController : MonoBehaviour
             {
                 thirdBar.SetActive(false);
                 deathBar.SetActive(true);
-            }
-            
+                GameManager.instance.AddDeadCount();
+                Invoke("LoadGameOverScene", 0.1f);  // 0.1秒後にLoadGameOverSceneメソッドを呼び出す
+            } 
         }
     }
 
-   
+    private void LoadGameOverScene()
+    {
+        SceneManager.LoadScene("GameOverScene");
+    }
 }

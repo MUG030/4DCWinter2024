@@ -81,7 +81,7 @@ public class OperatePlayer : MonoBehaviour
             isFalling = true;
         }
         */
-        Debug.Log($"isFalling:{isFalling}, velocity:{GetComponent<Rigidbody>().velocity.y}");
+        Debug.Log($"isFalling:{isFalling}, velocity:{GetComponent<Rigidbody2D>().velocity.y}");
         if(isFalling || (rigidBody.velocity.y < -0.1f))
         {
             collider.isTrigger = false;
