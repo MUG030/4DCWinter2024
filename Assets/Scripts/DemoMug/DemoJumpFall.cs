@@ -74,5 +74,14 @@ public class DemoJumpFall : MonoBehaviour
             anim.SetBool("jump", false);
             anim.SetBool("fall", false);
     }
+    void OnBecameInvisible()
+    {
+        if(groundCheckPoint.position.y < -5)
+        {
+            Debug.Log("GameOver_Falling");
+            //落下死の処理
+            GameManager.instance.FallDead();
+        }
+    }
 
 }

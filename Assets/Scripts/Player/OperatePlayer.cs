@@ -36,13 +36,16 @@ public class OperatePlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         if(Input.GetKeyDown(KeyCode.UpArrow) && isGrounded && (rigidBody.velocity.y == 0f))
         { Jump(); }
+        */
         if(Input.GetKeyDown(KeyCode.DownArrow))
         {
             collider.isTrigger = true;
             isFalling = true;
         }
+        /*
         if(isJumping && (rigidBody.velocity.y == -0.1f))
         {
             Debug.Log(collider.isTrigger);
@@ -58,19 +61,11 @@ public class OperatePlayer : MonoBehaviour
         { anim.SetBool("jump", true); }
         if(Input.GetKey(KeyCode.DownArrow))
         { anim.SetBool("fall", true); }
+        */
     }
     void FixedUpdate()
     {
         isGrounded = CheckGround();
-    }
-    void OnBecameInvisible()
-    {
-        if(transform.position.y < 0)
-        {
-            Debug.Log("GameOver_Falling");
-            //落下死の処理
-            GameManager.instance.FallDead();
-        }
     }
     void OnCollisionEnter2D(Collision2D collisionInfo)
     {
@@ -79,12 +74,15 @@ public class OperatePlayer : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
+        /*
         if(isJumping)
         {
             collider.isTrigger = true;
             isFalling = true;
         }
-        if(isFalling && (rigidBody.velocity.y < -0.1f))
+        */
+        Debug.Log($"isFalling:{isFalling}, velocity:{GetComponent<Rigidbody>().velocity.y}");
+        if(isFalling || (rigidBody.velocity.y < -0.1f))
         {
             collider.isTrigger = false;
             anim.SetBool("jump", false);
@@ -93,11 +91,13 @@ public class OperatePlayer : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
+        /*
         if(isJumping && !isGrounded)
         {
             collider.isTrigger = false;
             isJumping = false;
         }
+        */
         if(isFalling)
         {
             collider.isTrigger = false;
