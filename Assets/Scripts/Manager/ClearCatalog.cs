@@ -10,7 +10,7 @@ public class ClearCatalog : MonoBehaviour
     void Start()
     {
         beforeObject.SetActive(true);
-        afterObject.SetActive(false);
+        //afterObject.SetActive(false);
 
         Invoke("ChangeCatalog", 10.0f);
     }
@@ -18,6 +18,6 @@ public class ClearCatalog : MonoBehaviour
     private void ChangeCatalog()
     {
         beforeObject.SetActive(false);
-        afterObject.SetActive(true);
+        //afterObject.SetActive(true);
     }
 }

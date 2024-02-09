@@ -53,6 +53,9 @@ public class GameManager : MonoBehaviour
                 isTotalScoreAchievement3;
 
     public bool isFallDead;
+    public bool isFortune;
+    public bool secretComand;
+    public bool ikuraZero;
 
     
 
@@ -61,6 +64,30 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private List<KeyCode> konamiCode = new List<KeyCode> { KeyCode.UpArrow, KeyCode.UpArrow, KeyCode.DownArrow, KeyCode.DownArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.LeftArrow, KeyCode.RightArrow, KeyCode.B, KeyCode.A };
+    private int konamiCodeIndex = 0;
+
+    void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            if (Input.GetKeyDown(konamiCode[konamiCodeIndex]))
+            {
+                konamiCodeIndex++;
+                if (konamiCodeIndex >= konamiCode.Count)
+                {
+                    Debug.Log("Secret Command!");
+                    secretComand = true;
+                    konamiCodeIndex = 0;
+                }
+            }
+            else
+            {
+                konamiCodeIndex = 0;
+            }
+        }
     }
 
     /*private void OnEnable()
@@ -82,13 +109,148 @@ public class GameManager : MonoBehaviour
 
         if (scene.name == "ClearScene" || scene.name == "ClearDemo")
         {
-            if (isIkuraGetAchievement1)
+            if (isGameoverAchievement1)
             {
                 achivements[0].SetActive(true);
             }
             else
             {
                 achivements[0].SetActive(false);
+            }
+
+            if (isGameoverAchievement2)
+            {
+                achivements[1].SetActive(true);
+            }
+            else
+            {
+                achivements[1].SetActive(false);
+            }
+            
+            if (isGameoverAchievement3)
+            {
+                achivements[2].SetActive(true);
+            }
+            else
+            {
+                achivements[2].SetActive(false);
+            }
+
+            if (isIkuraGetAchievement1)
+            {
+                achivements[3].SetActive(true);
+            }
+            else
+            {
+                achivements[3].SetActive(false);
+            }
+
+            if (isIkuraGetAchievement2)
+            {
+                achivements[4].SetActive(true);
+            }
+            else
+            {
+                achivements[4].SetActive(false);
+            }
+
+            if (isIkuraGetAchievement3)
+            {
+                achivements[5].SetActive(true);
+            }
+            else
+            {
+                achivements[5].SetActive(false);
+            }
+
+            if (isClearAchievement1)
+            {
+                achivements[6].SetActive(true);
+            }
+            else
+            {
+                achivements[6].SetActive(false);
+            }  
+
+            if (isClearAchievement2)
+            {
+                achivements[7].SetActive(true);
+            }
+            else
+            {
+                achivements[7].SetActive(false);
+            }
+
+            if (isClearAchievement3)
+            {
+                achivements[8].SetActive(true);
+            }
+            else
+            {
+                achivements[8].SetActive(false);
+            }
+
+            if (isTotalScoreAchievement1)
+            {
+                achivements[9].SetActive(true);
+            }
+            else
+            {
+                achivements[9].SetActive(false);
+            }
+
+            if (isTotalScoreAchievement2)
+            {
+                achivements[10].SetActive(true);
+            }
+            else
+            {
+                achivements[10].SetActive(false);
+            }
+
+            if (isTotalScoreAchievement3)
+            {
+                achivements[11].SetActive(true);
+            }
+            else
+            {
+                achivements[11].SetActive(false);
+            }
+
+            if (isFallDead)
+            {
+                achivements[12].SetActive(true);
+            }
+            else
+            {
+                achivements[12].SetActive(false);
+            }
+
+            if (secretComand)
+            {
+                achivements[13].SetActive(true);
+            }
+            else
+            {
+                achivements[13].SetActive(false);
+            }
+
+            if (isFortune)
+            {
+                achivements[15].SetActive(true);
+            }
+            else
+            {
+                achivements[15].SetActive(false);
+            }
+
+            if (ikuraZero)
+            {
+                achivements[14].SetActive(true);
+            }
+            else
+            {
+                achivements[14].SetActive(false);
             }
         }
     }
@@ -100,7 +262,7 @@ public class GameManager : MonoBehaviour
         int fortune = UnityEngine.Random.Range(0, 100);
         if (fortune == 77)
         {
-            Debug.Log("運が良い");
+            isFortune = true;
         }
     }
 
