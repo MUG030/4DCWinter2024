@@ -1733,9 +1733,9 @@ MonoBehaviour:
   tile_Departure: {fileID: 255356691}
   tile_Goal: {fileID: 1214356726834485171, guid: b91559c12764cc84ab1d288a3b62cf63, type: 3}
   tile_Ways:
-  - {fileID: 5757098873861895525, guid: b5efdd495f8e9eb42a4e65ceb577f098, type: 3}
+  - {fileID: 2288244700811305279, guid: ac4a695a0318e604d9c9e42aeef454f6, type: 3}
   - {fileID: 2000442983236458537, guid: 88d28c5930e3f7e4fa035632abe4be2f, type: 3}
-  tile_Ways_Amount: 4
+  tile_Ways_Amount: 5
 --- !u!4 &1631164058
 Transform:
   m_ObjectHideFlags: 0
