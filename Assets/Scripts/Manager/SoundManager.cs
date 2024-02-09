@@ -23,17 +23,22 @@ public class SoundManager : MonoBehaviour
                 audioSource.clip = clips[0];
                 audioSource.Play();
             }
-            else if (GameManager.instance.score == 200 && audioSource.clip != clips[1])
+            else if (GameManager.instance.score == 3000 && audioSource.clip != clips[1])
             {
                 audioSource.clip = clips[1];
                 audioSource.Play();
                 audioSource.volume = 0.66f;
             }
-            else if (GameManager.instance.score == 300 && audioSource.clip != clips[2])
+            else if (GameManager.instance.score == 6000 && audioSource.clip != clips[2])
             {
                 audioSource.clip = clips[2];
                 audioSource.Play();
                 audioSource.volume = 0.55f;
+            }
+            else if (GameManager.instance.score == 10000 && audioSource.clip != clips[3])
+            {
+                audioSource.clip = clips[3];
+                audioSource.Play();
             }
             previousScore = GameManager.instance.score;
         }
