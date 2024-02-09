@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
         }
         rewardAchievement = new RewardAchievement();
-        Debug.Log("GameManagerのAwakeメソッドが呼ばれた");
         StartGame();
     }
 
@@ -53,6 +52,10 @@ public class GameManager : MonoBehaviour
                 isTotalScoreAchievement2,
                 isTotalScoreAchievement3;
 
+    public bool isFallDead;
+
+    
+
     public GameObject[] achivements;
 
     private void Start()
@@ -60,7 +63,7 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    private void OnEnable()
+    /*private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
@@ -68,7 +71,7 @@ public class GameManager : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    }*/
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
@@ -101,10 +104,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void FallDead()
+    {
+        isFallDead = true;
+    }
+
     public void AddTotalScore(int amount)
     {
         totalScore += amount;
-        rewardAchievement.TotalJudge(totalScore);
     }
 
     public void AddIkuraGetCount()
@@ -143,6 +150,7 @@ public class GameManager : MonoBehaviour
     public void AddLevel()
     {
         level++;
+        rewardAchievement.LevelJudge(level);
     }
 
     public void AddLevelCount(int amount)
